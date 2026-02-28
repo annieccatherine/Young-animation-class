@@ -17,6 +17,7 @@ body{
   gap: 18px; /*spacing between each card*/
   grid-template-columns: 1fr; /* 1 collumn on mobile */
   justify-items: center; /* centers cards inside the grid*/
+  justify-content: center;   
 }
 
 @media (min-width: 900px){
