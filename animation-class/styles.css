@@ -1,0 +1,138 @@
+* {box-sizing: border-box; }
+
+body{
+  margin: 0;
+  background: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.center{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 180px 0 180px 0; /* horizontal centering of container */
+}
+
+.cards-grid{
+  display: grid;
+  gap: 18px; /*spacing between each card*/
+  grid-template-columns: 1fr; /* 1 collumn on mobile */
+  justify-items: center; /* centers cards inside the grid*/
+}
+
+@media (min-width: 900px){
+  .cards-grid{
+    grid-template-columns: repeat(3, 260px); 
+  }
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    min-height: 400px;
+    width: 260px;
+    height: 420px;
+    padding: 20px;
+    display: grid;
+    align-content: end;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    transform: translateY(0);
+    transition: transform 250ms ease;
+
+}
+
+
+.card img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  transform: scale(1);
+  transition: filter 350ms ease, transform 500ms ease;
+  filter: brightness(80%);
+
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(0,0,0,0.45); 
+  transition: background-color 350ms ease;
+
+}
+
+.card-content{
+  position: relative;
+  display: grid;
+  gap: .9px;
+  justify-items: center;
+  text-align: center;
+  padding-bottom: 10px;
+  
+}
+
+/* shop now content */
+.card p {
+    margin: 0;
+    line-height: 1.45;
+    opacity: 0;
+    color:rgb(250, 250, 250);
+    transform: translateY(10px);
+    transition: opacity 350ms ease, transform 350ms ease;
+    text-shadow: 0 2px 12px rgba(0,0,0,1)
+
+}
+
+/* branding, graphics, apparel */
+.card h3{
+  margin: 0;
+  position: absolute;
+  bottom: 55px; /* controls vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  color:white;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.85);
+  /*text-shadow: X-offset  Y-offset  blur  color;*/
+  transition: opacity 250ms ease, transform 250ms ease;
+
+}
+
+.card .hint {
+    margin: auto;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 1px;
+    text-shadow: 0 2px 12px rgb(7, 7, 7)
+    
+}
+
+/*brightness of the image when you hover*/
+.card:hover img {
+    filter: brightness(60%);
+
+}
+
+.card:hover::before{
+  background-color: rgba(0,0,0,0.65);
+
+}
+
+.card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+    
+}
+
+.card-1 img { transform: scale(.9); object-position: center 20%; }
+.card-2 img { transform: scale(.9); object-position: center 45%; }
+.card-3 img { transform: scale(.9); object-position: center; }
+
+.card.card-1::before { background: rgba(182, 184, 183,  0.18); }   
+.card.card-2::before { background: rgba(182, 184, 183,  0.18); }  
+.card.card-3::before { background: rgba(182, 184, 183, 0.18); }  
+
