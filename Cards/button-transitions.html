@@ -1,0 +1,89 @@
+
+<DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>Button Transtions</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:white;
+    font-family: Times, san-serif;
+}
+
+.wrapper{
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    padding: 14px 24px;
+    border-radius: 10px;
+    border: black;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.button-1 {
+    background: white;
+    border: 1px solid rgb(54, 53, 53);
+    color: black;
+    transition: background-color .3s, transform .3s;
+
+
+}
+
+.button-1:hover {
+    background: rgb(244, 244, 244);
+    color: rgb(141, 141, 141);
+    border: rgb(244, 244, 244);
+    
+}
+
+.button-2 {
+    background: white;
+    border: 1px solid rgb(54, 53, 53);
+    transition: letter-spacing .3s, background-color .3s;
+
+}
+
+.button-2:hover {
+    background: rgb(244, 244, 244);
+    color: rgb(141, 141, 141);
+    border: rgb(244, 244, 244);
+}
+
+.button-3 {
+    background: white;
+    color: black;
+    border: 1px solid rgb(54, 53, 53);
+    transition: box-shadow .3s, border-radius .3s;
+
+}
+
+.button-3:hover{
+    background: rgb(244, 244, 244);
+    color: rgb(141, 141, 141);
+    border: rgb(244, 244, 244);
+}
+
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+    <button class="button-1"> Button 1</button>
+    <button class="button-2"> Button 2</button>
+    <button class="button-3"> Button 3</button>
+</div>
+
+</body>
+</html>
