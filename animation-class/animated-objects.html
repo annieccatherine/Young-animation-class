@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Objects</title>
+
+  <style>
+body {
+    margin: 0;
+    background: white;
+    font-family: "Times New Roman", serif;
+}
+
+.animated-icons-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.animated-icon-2 {
+    position: relative;
+    display:inline-block;
+    width: 11ch;
+    white-space:nowrap;
+    overflow: visible;
+    line-height: 0.9;
+    margin: -8px 0;
+    color: #000000;
+    white-space: nowrap;
+    text-align: left;
+  
+}
+
+.animated-icon-2 .word {
+  display: inline-block;
+  overflow: hidden;
+  width: 1.35ch;
+  vertical-align: middle;
+  animation: reveal-main 8s infinite linear;
+
+}
+
+
+.animated-icon-2 .dot {
+  position: absolute;
+  top: 0;
+  left: 1.2ch;         
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  transition: none;    
+  animation: move-dot 8s infinite linear;
+
+}
+
+
+.animated-icon-1 {
+    font-size: 64px;
+    opacity: 0;
+    animation: fade 8s infinite linear;
+
+}
+
+
+.animated-icon-2 {
+    font-size: 64px;
+    opacity: 1;
+    animation: reveal-main 8s infinite ease-in-out;
+
+}
+
+  
+.animated-icon-3 {
+    font-size: 64px;
+    opacity: 0;
+    animation: fade 8s infinite linear;
+
+}
+
+@keyframes reveal-main {
+  0% {
+    width: 1.35ch;
+  }
+
+  37.5% {
+    width: 1.35ch; 
+  }
+
+  50% {
+    width: 10.5ch; 
+  }
+
+  87.5% {
+    width: 10.5ch; 
+  }
+
+  100% {
+    width: 1.35ch; 
+  }
+
+}
+
+@keyframes move-dot {
+  0% {
+    left: 1.2ch;       
+  }
+
+  37.5% {
+    left: 1.2ch;       
+  }
+
+  50% {
+    left: 10.3ch;      
+  }
+
+  87.5% {
+    left: 10.3ch;    
+  }
+
+  100% {
+    left: 1.2ch;
+  }
+}
+
+@keyframes fade {
+   0% {
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0; /* stay hidden while B. is showing */
+  }
+
+  55% {
+    opacity: 0.2; /* fade in when middle word comes in */
+  }
+
+  87.5% {
+    opacity: 0.2; /* words stay put*/
+  }
+
+  100% {
+    opacity: 0; /* fade out*/
+   }
+}
+
+
+</style>
+</head> 
+
+<body>
+  <section class="animated-icons-container">
+  <div class="animated-icon-1">
+  <span class="word">BRANDIER.</span>
+</div>
+
+<div class="animated-icon-2">
+<span class="word">BRANDIER</span>
+<span class="dot">&period;</span>
+</div>
+
+  
+<div class="animated-icon-3">
+<span class="word">BRANDIER.</span>
+</div>
+</section>
