@@ -10,6 +10,53 @@ body {
   color: #111;
 }
 
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.9;
+  text-align: center;
+  max-width: 100%;
+  letter-spacing: 0.16em;
+  font-weight: 100;
+  padding-inline: 50px;
+  
+
+ 
+
+}
+
+.main-title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.main-title span:first-child {
+  margin-bottom: 12px; 
+
+}
+
+.sub-text {
+  margin-top: 20px;
+
+}
+
+
+.left-inner {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 50px;
+  overflow: hidden;
+}
+
+
 /* top scroll bar thing */
 .scroll-watcher {
   position: fixed;
@@ -39,14 +86,16 @@ body {
 }
 
 .left-inner {
- text-align: center;
+  text-align: center;
   position: sticky;
   top: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 80px 60px;
+  padding: 40px 30px;
+  overflow: hidden;
 }
 
 .eyebrow {
@@ -58,7 +107,7 @@ body {
 
 .changing-text {
 
-  font-size: 5rem;
+  font-size: 2rem;
   letter-spacing: .5rem;
   line-height: 1.6;
   max-width: 420px;
@@ -78,7 +127,7 @@ body {
 }
 
 .image-card {
-  width: 100%;
+  width: min(90%, 700px);
   max-width: 600px; /*  controls size of image */
   margin: 0 auto;
 
@@ -112,14 +161,15 @@ body {
 }
 
 .rolling-word {
- display: inline-block;
- min-width: 120px; 
- text-align: center;
- font-size: 2rem;
- letter-spacing: .3rem;
- line-height: 1.6;
- max-width: 420px;
- transition: opacity 0.4s ease, transform 0.4s ease;
+  display: inline-block;
+  min-width: 180px;
+  text-align: center;
+  font-size: clamp(.5rem, 2vw, 1.5rem);
+  letter-spacing: 0.25em;
+  line-height: 1.3;
+  white-space: nowrap;
+   font-weight: 400;
+  opacity: 5;
 }
 
 .roll-out {

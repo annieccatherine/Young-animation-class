@@ -8,10 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  /* show first image right away */
   cards[0].classList.add("show");
 
-  /* image animation */
+
   const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const card = entry.target.querySelector(".image-card");
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   steps.forEach((step) => cardObserver.observe(step));
 
-  /* changing word */
+
   let currentWord = "graphics";
   let wordTimeout;
 
